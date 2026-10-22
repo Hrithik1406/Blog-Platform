@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Platform with Comments</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <h1>BlogPlatform with Comments</h1>
+          <p>
+            Develop a blogging platform where users can create posts and comment.
+          </p>
+          <button class="watch-btn" type="button">▶ Watch Task Tutorial</button>
+        </div>
+      </header>
+
+      <main class="content-grid">
+        <section class="panel auth-panel">
+          <h2>Account</h2>
+          <div class="auth-tabs">
+            <button class="tab active" data-mode="login">Login</button>
+            <button class="tab" data-mode="register">Register</button>
+          </div>
+
+          <form id="authForm">
+            <label>
+              Username
+              <input id="username" name="username" type="text" placeholder="Enter username" required />
+            </label>
+            <label>
+              Password
+              <input id="password" name="password" type="password" placeholder="Enter password" required />
+            </label>
+            <button type="submit" class="primary">Continue</button>
+          </form>
+          <p id="authMessage" class="message"></p>
+        </section>
+
+        <section class="panel feed-panel">
+          <div class="panel-header">
+            <h2>Posts</h2>
+            <button id="logoutBtn" class="secondary hidden" type="button">Logout</button>
+          </div>
+
+          <form id="postForm" class="post-form hidden">
+            <input id="postTitle" name="title" type="text" placeholder="Post title" required />
+            <textarea id="postContent" name="content" placeholder="Write your post..." rows="4" required></textarea>
+            <button type="submit" class="primary">Create Post</button>
+          </form>
+
+          <div id="postsContainer" class="posts"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

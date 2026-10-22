@@ -1,0 +1,264 @@
+:root {
+  --bg: #f6f5f3;
+  --panel: #ffffff;
+  --ink: #1d1d1f;
+  --muted: #5f646a;
+  --border: #e5d7d6;
+  --accent: #ec5d55;
+  --accent-2: #6ad9a1;
+  --shadow: rgba(25, 18, 18, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #1f1d1d, #2d2a2a 30%, #f4f2ef 30%, #f4f2ef 100%);
+  color: var(--ink);
+}
+
+.page-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 30px 80px;
+}
+
+.hero {
+  display: flex;
+  padding: 32px 0 18px;
+}
+
+.hero-copy {
+  width: min(720px, 100%);
+  background: rgba(255, 255, 255, 0.78);
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: 28px 32px 22px;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+}
+
+.hero-copy p {
+  margin: 18px 0 24px;
+  font-size: clamp(1.1rem, 2vw, 1.75rem);
+  line-height: 1.45;
+  max-width: 640px;
+}
+
+.watch-btn {
+  background: #fff;
+  border: 2px solid #f38b82;
+  color: #111;
+  border-radius: 14px;
+  padding: 16px 24px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.watch-btn::before {
+  content: "▶";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.82);
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 8px 20px var(--shadow);
+  padding: 22px;
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.tab {
+  flex: 1;
+  border: 1px solid var(--border);
+  background: #f7f7f7;
+  color: var(--ink);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+#authForm,
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid #d8d3d0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: white;
+  color: var(--ink);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.primary,
+.secondary {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--accent-2);
+  color: #063a25;
+}
+
+.secondary {
+  background: #f0f0f0;
+  color: var(--ink);
+}
+
+.message {
+  min-height: 20px;
+  margin: 14px 0 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.posts {
+  margin-top: 20px;
+  display: grid;
+  gap: 18px;
+}
+
+.post-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  background: #fffdfb;
+}
+
+.post-card h3 {
+  margin: 0 0 8px;
+}
+
+.post-meta,
+.comment-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.post-card p {
+  margin: 0 0 12px;
+  line-height: 1.55;
+}
+
+.comments {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.comment {
+  background: #f9f5f5;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.comment-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.comment-form input {
+  flex: 1;
+}
+
+.empty {
+  color: var(--muted);
+  padding: 16px 0;
+}
+
+@media (max-width: 860px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-shell {
+    padding-inline: 18px;
+  }
+}
